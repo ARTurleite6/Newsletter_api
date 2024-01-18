@@ -31,6 +31,12 @@ config :newsletter, NewsletterWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :newsletter, Newsletter.Mailer, adapter: Swoosh.Adapters.Local
 
+config :newsletter, Newsletter.Scheduler,
+  jobs: [
+    {"0 10 * * *", {fn -> Newsletter.Specialties.send_emails() end}},
+    {"* * * * *", {fn -> IO.puts("ola") end}}
+  ]
+
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",

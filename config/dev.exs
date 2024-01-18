@@ -81,7 +81,8 @@ config :phoenix_live_view, :debug_heex_annotations, true
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
 
-config :quantum,
+config :newsletter, Newsletter.Scheduler,
   jobs: [
-    {" 0 10 * * *", {fn -> Newsletter.Specialties.send_emails() end}}
+    {"0 10 * * *", {fn -> Newsletter.Specialties.send_emails() end}},
+    {"* * * * *", {fn -> IO.puts("ola") end}}
   ]

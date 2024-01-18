@@ -53,7 +53,8 @@ defmodule Newsletter.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:quantum, "~>3.0"},
       {:tzdata, "~>1.1"},
-      {:phoenix_swoosh, "~> 1.0"}
+      {:phoenix_swoosh, "~> 1.0"},
+      {:corsica, "~>1.1.3"}
     ]
   end
 

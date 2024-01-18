@@ -47,5 +47,12 @@ defmodule NewsletterWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+
+  plug Corsica,
+    origins: "*",
+    allow_headers: ["accept", "content-type", "authorization"],
+    allow_credentials: true,
+    log: [rejected: :error, invalid: :warn, accepted: :debug]
+
   plug NewsletterWeb.Router
 end
