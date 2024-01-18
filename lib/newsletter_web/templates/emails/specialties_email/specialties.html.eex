@@ -1,0 +1,18 @@
+<p>Hello There,</p>
+
+<p>Are you planning to have lunch in the neighborhood today? Check out what the restaurants nearby are offering:</p>
+
+<ul>
+    <%= for specialty <- @specialties do %>
+        <li><%= specialty.restaurant %></li>
+        <ul>
+            <%= for dish <- specialty.dishes do %>
+                <li>- <%= dish.name %></li>
+            <% end %>
+        </ul>
+    <% end %>
+</ul
+
+<p>Enjoy your meal :)</p>
+
+<p>See you tomorrow</p>
